@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/pavlo842/nodejs_mysql_vue#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sequelize": "^5.21.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
