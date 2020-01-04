@@ -33,13 +33,13 @@
                   <v-spacer></v-spacer>
 
                   <v-text-field
-                  clearable
-                  v-model="todoTitle"
-                  id="newTodo"
-                  name="newTodo"
-                  label="Введите название задачи"
-                  @keyup.enter="addTodo"
-                  ></v-text-field>
+                    clearable
+                    v-model="todoTitle"
+                    id="newTodo"
+                    name="newTodo"
+                    label="Введите название задачи"
+                    @keyup.enter="addTodo"
+                    ></v-text-field>
                 </v-card-text>
 
                 <v-list two-line flat subheader>
@@ -58,8 +58,13 @@
                         </v-list-item-action>
 
                         <v-list-item-content>
-                          <v-list-item-title :class="{done: todo.done}">{{todo.title | capitalize}}</v-list-item-title>
-                          <v-list-item-subtitle>Добавлено в: {{todo.date | date}}</v-list-item-subtitle>
+                          <v-list-item-title :class="{done: todo.done}">
+                            {{todo.title | capitalize}}
+                          </v-list-item-title>
+                          <v-list-item-subtitle>
+                            Добавлено в: {{todo.createdAt | date(true)}}
+                            (изменено {{todo.updatedA | date(true)}})
+                          </v-list-item-subtitle>
                         </v-list-item-content>
                         <v-btn fab small color="error" @click="removeTodo(todo.id)"><v-icon>close</v-icon></v-btn>
                       </template>
